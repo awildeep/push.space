@@ -1,0 +1,103 @@
+<html lang="en">
+<body>
+    <div class="container">
+        <a href="#" id="space" class="button outline space">space</a>
+    </div>
+
+    <style>
+        body {
+            background-color: #000;
+        }
+        .pressed {
+            box-shadow: 4px 4px 0 -0px black, 4px 4px 0 0 #bbb !important;
+            transform: translate(4px, 4px);
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 38em;
+        }
+        .space {
+            margin: auto;
+            display: inline-block;
+            min-width: 300px;
+            text-align: center;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-bottom: 2px;
+            text-decoration: none;
+        }
+        .button.outline {
+            border-color: #bbb;
+            box-shadow: 3px 3px 0 -1px black, 3px 3px 0 0 #bbb;
+            background-color: #0000;
+            background-image: none;
+        }
+
+        .button {
+            color: #bababa;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background-image: radial-gradient(circle at 0 0, #a570e3, #000 42%);
+            border: 1px solid #a570e3;
+            border-radius: 8px;
+            margin: 0 0 4px;
+            padding: 8px 25px;
+            font-size: 1em;
+            line-height: 20px;
+            transition: all .2s;
+            box-shadow: 3px 3px 0 -1px #000, 3px 3px #a570e3;
+        }
+        .button:hover {
+            color: #bbb;
+            background-color: #32343a;
+            transform: translate(-1px, -1px);
+            box-shadow: 4px 4px 0 -1px #000, 4px 4px #a570e3;
+        }
+
+
+
+        .button.outline {
+            border-color: #bbb;
+            box-shadow: 3px 3px 0 -1px black, 3px 3px 0 0 #bababa;
+            background-color: #0000;
+            background-image: none;
+        }
+
+        .button.outline:hover {
+            box-shadow: 4px 4px 0 -1px black, 4px 4px 0 0 #bbb;
+            transform: translate(-1px, -1px);
+        }
+
+        .button.outline:active {
+            box-shadow: 2px 2px 0 -1px black, 2px 2px 0 0 #bbb;
+            transform: translate(1px, 1px);
+        }
+
+        @media all and (max-width: 699px) and (min-width: 220px) {
+            .button {
+                font-size: 1.5em;
+                padding: .75em
+            }
+        }
+
+    </style>
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.key === ' ') {
+                // Spacebar was pressed
+                document.getElementById("space").classList.add("pressed")
+                console.log('pressed')
+            }
+        });
+        document.addEventListener('keyup', (event) => {
+            if (event.key === ' ') {
+                // Spacebar was pressed
+                document.getElementById("space").classList.remove("pressed")
+                console.log('released')
+            }
+        });
+    </script>
+</body>
+</html>
